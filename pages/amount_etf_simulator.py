@@ -3,6 +3,7 @@ import yfinance as yf
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from etfs_list import *
 
 st.set_page_config(page_title="Montants Obtenus", layout="centered")
 st.title("📊 Simulation de Montants Obtenus (sans objectif)")
@@ -19,35 +20,7 @@ monthly_contribution = st.sidebar.number_input("📆 Contribution mensuelle (€
 investment_duration_years = st.sidebar.slider("⏳ Durée de l'investissement (années)", 5, 40, 20)
 annual_fee_percent = st.sidebar.number_input("💼 Frais annuels (%)", min_value=0.0, max_value=5.0, value=0.3, step=0.1)
 
-tickers = {
-    "^GSPC": "S&P 500",
-    "^NDX": "Nasdaq 100",
-    "^DJI": "Dow Jones Industrial Average",
-    "^RUT": "Russell 2000",
-    "^GSPTSE": "S&P/TSX Composite",
-    "^FTSE": "FTSE 100",
-    "^STOXX50E": "Euro Stoxx 50",
-    "^FCHI": "CAC 40 (France)",
-    "^GDAXI": "DAX 40 (Allemagne)",
-    "^IBEX": "IBEX 35 (Espagne)",
-    "^AEX": "AEX 25 (Pays-Bas)",
-    "^SSMI": "SMI (Suisse)",
-    "^N225": "Nikkei 225 (Japon)",
-    "^HSI": "Hang Seng Index (Hong Kong)",
-    "000001.SS": "SSE Composite (Chine)",
-    "^TWII": "TSEC Weighted Index (Taïwan)",
-    "^BSESN": "BSE Sensex (Inde)",
-    "^AXJO": "ASX 200 (Australie)",
-    "^BVSP": "IBOVESPA (Brésil)",
-    "^MXX": "IPC Mexico",
-    "^KS11": "KOSPI (Corée du Sud)",
-    "^JKSE": "IDX Composite (Indonésie)",
-    "^TA125.TA": "TA-125 (Israël)",
-    "CL=F": "Pétrole brut (WTI)",
-    "GC=F": "Or (Gold)",
-    "SI=F": "Argent (Silver)",
-    "BTC-EUR": "(Bitcoin)"
-}
+tickers = etfs()
 
 selected_ticker = st.sidebar.selectbox("📊 Choisissez un indice", options=list(tickers.keys()), format_func=lambda x: tickers[x])
 

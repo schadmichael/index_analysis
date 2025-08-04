@@ -4,13 +4,14 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
+from etfs_list import *
 
 # --- Titre de l'application ---
 st.set_page_config(page_title="Simulateur ETFS", layout="centered")
-st.title("📈 Simulateur pour atteindre 1 Million d'€")
+st.title("📈 Simulateur pour atteindre une Cible en d'€")
 
 st.markdown("""
-Ce simulateur permet d'estimer en combien de temps vous pouvez atteindre **1 million d'euros** 
+Ce simulateur permet d'estimer en combien de temps vous pouvez atteindre **une target en euros** 
 en investissant régulièrement dans un indice boursier, avec la possibilité de simuler des **frais annuels**.
 """)
 
@@ -21,36 +22,7 @@ monthly_contribution = st.sidebar.number_input("📆 Contribution mensuelle (€
 target_value = st.sidebar.number_input("🎯 Objectif à atteindre (€)", min_value=10000, value=1_000_000, step=50000)
 annual_fee_percent = st.sidebar.number_input("💼 Frais annuels (%)", min_value=0.0, max_value=5.0, value=0.3, step=0.1)
 
-tickers = {
-    "^GSPC": "S&P 500",
-    "^NDX": "Nasdaq 100",
-    "^DJI": "Dow Jones Industrial Average",
-    "^RUT": "Russell 2000",
-    "^GSPTSE": "S&P/TSX Composite",
-    "^FTSE": "FTSE 100",
-    "^STOXX50E": "Euro Stoxx 50",
-    "^FCHI": "CAC 40 (France)",
-    "^GDAXI": "DAX 40 (Allemagne)",
-    "^IBEX": "IBEX 35 (Espagne)",
-    "^AEX": "AEX 25 (Pays-Bas)",
-    "^SSMI": "SMI (Suisse)",
-    "^N225": "Nikkei 225 (Japon)",
-    "^HSI": "Hang Seng Index (Hong Kong)",
-    "000001.SS": "SSE Composite (Chine)",
-    "^TWII": "TSEC Weighted Index (Taïwan)",
-    "^BSESN": "BSE Sensex (Inde)",
-    "^AXJO": "ASX 200 (Australie)",
-    "^BVSP": "IBOVESPA (Brésil)",
-    "^MXX": "IPC Mexico",
-    "^KS11": "KOSPI (Corée du Sud)",
-    "^JKSE": "IDX Composite (Indonésie)",
-    "^TA125.TA": "TA-125 (Israël)",
-    "CL=F": "Pétrole brut (WTI)",
-    "GC=F": "Or (Gold)",
-    "SI=F": "Argent (Silver)",
-    "BTC-EUR": "(Bitcoin)"
-}
-
+tickers = etfs()
 selected_ticker = st.sidebar.selectbox("📊 Choisissez un indice", options=list(tickers.keys()), format_func=lambda x: tickers[x])
 
 # --- Téléchargement des données ---
