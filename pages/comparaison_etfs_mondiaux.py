@@ -29,7 +29,7 @@ selected = st.sidebar.multiselect(
     list(indices.keys()),
     default=["S&P 500 (USA)", "NASDAQ 100 (USA)"]
 )
-period = st.sidebar.selectbox("Période d'analyse", options=["1y", "3y", "5y", "10y"], index=2)
+period = st.sidebar.selectbox("Période d'analyse", options=["1y", "3y", "5y", "10y","15y","20y","25y","30y","35y","40y"], index=2)
 risk_free_rate = st.sidebar.slider("Taux sans risque (%) pour le Sharpe Ratio", 0.0, 5.0, 2.0) / 100
 
 # Fonction pour récupérer les données

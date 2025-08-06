@@ -9,6 +9,9 @@ def etfs():
         "^STOXX50E": "Euro Stoxx 50",
         "^FCHI": "CAC 40 (France)",
         "^GDAXI": "DAX 40 (Allemagne)",
+        # 🌍 Indices mondiaux et régionaux
+        "URTH":"MSCI World Index",  # ETF représentant le MSCI World
+        "ACWI":"ACWI (All Country World Index)",
         "^IBEX": "IBEX 35 (Espagne)",
         "^AEX": "AEX 25 (Pays-Bas)",
         "^SSMI": "SMI (Suisse)",
