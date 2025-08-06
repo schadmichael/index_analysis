@@ -8,8 +8,7 @@ from etfs_list import *
 
 # --- Titre de l'application ---
 st.set_page_config(page_title="Simulateur ETFS", layout="centered")
-st.title("📈 Simulateur pour atteindre une Cible en d'€")
-
+st.title("📈 Simulateur pour atteindre une Cible en €")
 st.markdown("""
 Ce simulateur permet d'estimer en combien de temps vous pouvez atteindre **une target en euros** 
 en investissant régulièrement dans un indice boursier, avec la possibilité de simuler des **frais annuels**.

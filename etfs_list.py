@@ -28,3 +28,63 @@ def etfs():
         "SI=F": "Argent (Silver)",
         "BTC-EUR": "(Bitcoin)"
     }
+
+def etfs_enrich_list():
+    return {
+    # 🇺🇸 USA
+    "S&P 500 (USA)": "^GSPC",
+    "NASDAQ 100 (USA)": "^NDX",
+    "Dow Jones (USA)": "^DJI",
+    "Russell 2000 (USA)": "^RUT",
+
+    # 🇨🇦 Canada
+    "S&P/TSX Composite (Canada)": "^GSPTSE",
+
+    # 🇬🇧 Royaume-Uni
+    "FTSE 100 (UK)": "^FTSE",
+
+    # 🇩🇪 Allemagne
+    "DAX (Germany)": "^GDAXI",
+
+    # 🇫🇷 France
+    "CAC 40 (France)": "^FCHI",
+
+    # 🇪🇺 Europe
+    "STOXX Europe 600": "^STOXX",
+    "EURO STOXX 50": "^STOXX50E",
+
+    # 🌍 Indices mondiaux et régionaux
+    "MSCI World Index": "URTH",  # ETF représentant le MSCI World
+    "MSCI Emerging Markets": "EEM",
+    "MSCI EAFE (Europe, Australasia, Far East)": "EFA",
+    "ACWI (All Country World Index)": "ACWI",
+
+    # 🇯🇵 Japon
+    "Nikkei 225 (Japan)": "^N225",
+
+    # 🇨🇳 Chine
+    "Shanghai Composite (China)": "000001.SS",
+    "CSI 300 (China)": "000300.SS",
+
+    # 🇭🇰 Hong Kong
+    "Hang Seng (Hong Kong)": "^HSI",
+
+    # 🇰🇷 Corée du Sud
+    "KOSPI (South Korea)": "^KS11",
+
+    # 🇮🇳 Inde
+    "BSE Sensex (India)": "^BSESN",
+    "Nifty 50 (India)": "^NSEI",
+
+    # 🇧🇷 Brésil
+    "Bovespa (Brazil)": "^BVSP",
+
+    # 🇲🇽 Mexique
+    "IPC Mexico": "^MXX",
+
+    # 🇦🇺 Australie
+    "S&P/ASX 200 (Australia)": "^AXJO",
+
+    # 🇿🇦 Afrique du Sud
+    "FTSE/JSE Top 40 (South Africa)": "J200.JO"
+}
